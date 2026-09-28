@@ -1,0 +1,430 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    overflow: hidden;
+    color: #3e3028;
+}
+
+/* NỀN */
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+
+    background:
+        radial-gradient(circle at 15% 20%,
+        rgba(151, 104, 73, 0.15),
+        transparent 30%),
+
+        radial-gradient(circle at 85% 80%,
+        rgba(112, 72, 45, 0.12),
+        transparent 30%),
+
+        #f5efe4;
+}
+
+/* SLIDE */
+
+.slide {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 70px 10%;
+
+    opacity: 0;
+    transform: translateX(50px);
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.slide.active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+/* NỘI DUNG */
+
+.content {
+    width: 100%;
+    max-width: 1100px;
+    text-align: center;
+}
+
+.intro {
+    animation: appear 1s ease;
+}
+
+.small-title {
+    letter-spacing: 5px;
+    font-size: 13px;
+    color: #927055;
+    margin-bottom: 20px;
+}
+
+h1,
+h2 {
+    font-family: 'Playfair Display', serif;
+}
+
+h1 {
+    font-size: clamp(45px, 7vw, 90px);
+    line-height: 1.05;
+    color: #4c3526;
+}
+
+h1 span {
+    color: #956b4d;
+}
+
+h2 {
+    font-size: clamp(35px, 5vw, 60px);
+    margin-bottom: 45px;
+    color: #4c3526;
+}
+
+.description {
+    max-width: 600px;
+    margin: 30px auto;
+    line-height: 1.8;
+    color: #705d4d;
+}
+
+.decor {
+    font-family: Georgia;
+    font-size: 90px;
+    color: #a47b5a;
+    height: 70px;
+}
+
+.author {
+    margin-top: 40px;
+    color: #756052;
+    line-height: 2;
+}
+
+/* BUTTON */
+
+button {
+    border: none;
+    background: #704d37;
+    color: white;
+
+    padding: 14px 30px;
+
+    border-radius: 30px;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    background: #4d3425;
+}
+
+/* DÀN Ý */
+
+.outline {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.outline-item {
+    display: flex;
+    align-items: center;
+
+    text-align: left;
+
+    padding: 25px;
+
+    background: rgba(255,255,255,0.45);
+
+    border: 1px solid rgba(120,90,60,0.15);
+
+    border-radius: 15px;
+
+    transition: 0.4s;
+}
+
+.outline-item:hover {
+    transform: translateY(-6px);
+    background: rgba(255,255,255,0.8);
+}
+
+.outline-item > span {
+    font-family: 'Playfair Display';
+    font-size: 35px;
+    color: #a57956;
+
+    margin-right: 20px;
+}
+
+.outline-item h3 {
+    margin-bottom: 5px;
+}
+
+.outline-item p {
+    font-size: 14px;
+    color: #796858;
+}
+
+/* TRANG BÀI VĂN */
+
+.paper {
+    text-align: left;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,0.6),
+            rgba(255,255,255,0.6)
+        );
+
+    padding: 55px;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 20px 60px rgba(70,45,25,0.12);
+}
+
+.paper h2 {
+    margin-bottom: 25px;
+}
+
+.text-box {
+    border-left: 3px solid #a47b5a;
+
+    padding-left: 30px;
+
+    max-width: 900px;
+
+    line-height: 2;
+
+    color: #5f5045;
+}
+
+.text-box p {
+    margin-bottom: 20px;
+}
+
+.text-box h3 {
+    font-family: 'Playfair Display';
+    font-size: 23px;
+    margin: 25px 0 10px;
+}
+
+/* NGHỆ THUẬT */
+
+.art-box {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+
+.art-box > div {
+    padding: 35px;
+
+    background: rgba(255,255,255,0.55);
+
+    border-radius: 15px;
+
+    transition: 0.4s;
+}
+
+.art-box > div:hover {
+    transform: translateY(-8px);
+}
+
+.number {
+    font-family: 'Playfair Display';
+    font-size: 45px;
+    color: #a57956;
+}
+
+.art-box h3 {
+    font-family: 'Playfair Display';
+    font-size: 24px;
+    margin: 15px 0;
+}
+
+.art-box p {
+    color: #766455;
+}
+
+/* TRANG CUỐI */
+
+.ending {
+    text-align: center;
+}
+
+.flower {
+    font-size: 70px;
+    color: #9b7455;
+
+    animation: float 3s infinite ease-in-out;
+}
+
+.thanks {
+    margin-top: 25px;
+
+    font-size: 20px;
+
+    color: #806a58;
+}
+
+.line {
+    width: 100px;
+    height: 2px;
+
+    background: #a47b5a;
+
+    margin: 30px auto;
+}
+
+.quote {
+    font-family: 'Playfair Display';
+
+    font-style: italic;
+
+    color: #91745d;
+}
+
+/* CONTROLS */
+
+.controls {
+    position: fixed;
+
+    bottom: 25px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    z-index: 20;
+}
+
+.controls button {
+    width: 45px;
+    height: 45px;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    font-size: 25px;
+}
+
+#pageNumber {
+    font-size: 13px;
+    color: #806a58;
+}
+
+/* THANH TIẾN TRÌNH */
+
+.progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    height: 4px;
+
+    width: 14.28%;
+
+    background: #806044;
+
+    z-index: 100;
+
+    transition: width 0.5s ease;
+}
+
+/* HIỆU ỨNG */
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* ĐIỆN THOẠI */
+
+@media(max-width: 700px) {
+
+    .slide {
+        padding: 40px 20px 90px;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+
+    h2 {
+        font-size: 35px;
+    }
+
+    .outline {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .outline-item {
+        padding: 17px;
+    }
+
+    .paper {
+        padding: 30px 20px;
+        max-height: 75vh;
+        overflow-y: auto;
+    }
+
+    .art-box {
+        grid-template-columns: 1fr;
+    }
+
+    .art-box > div {
+        padding: 20px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+}
